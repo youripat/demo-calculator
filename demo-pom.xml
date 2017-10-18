@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nl.amis.cd.demo.calc</groupId>
+  <artifactId>calculator</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Demo Calculator</name>
+  <description>A very basic java calculator</description>
+  <url></url>
+  <organization>
+      <name>AMIS Services</name>
+      <url>http://www.amis.nl</url>
+  </organization>
+  <issueManagement>
+      <system>Jira</system>
+      <url>https://amisservices.atlassian.net/</url>
+  </issueManagement>
+  <developers>
+    <developer>
+        <id>aino.andriessen</id>
+        <name>Aino Andriessen</name>
+        <email>aino.andriessen@amis.nl</email>
+        <organization>AMIS</organization>
+        <roles><role>architect</role><role>developer</role><role>scrum master</role><role>product owner</role></roles>
+        <timezone>+1</timezone>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:svn:https://subversion.amis.nl/intern/training/ALM_fundamentals_1_dag/trunk/exercises/4_jenkins/src-demo-calculator</connection>
+    <developerConnection>scm:svn:https://subversion.amis.nl/intern/training/ALM_fundamentals_1_dag/trunk/exercises/4_jenkins/src-demo-calculator</developerConnection>
+    <url>https://subversion.amis.nl/intern/training/ALM_fundamentals_1_dag/trunk/exercises/4_jenkins/src-demo-calculator</url>
+  </scm>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+   <reporting>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.1</version>
+        </plugin>
+      </plugins>
+    </reporting>
+  <distributionManagement>
+    <repository>
+        <id>NexusAmis</id>
+        <name>AMIS repository for releases</name>
+        <url>http://build.amis.nl:8081/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>NexusAmis</id>
+        <name>AMIS repositories for snapshots</name>
+        <url>http://build.amis.nl:8081/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+    <site>
+      <id>local-projectsites</id>
+      <name>Local Projectsite</name>
+      <url>file:C:\temp\projectsites\DemoCalculator</url>
+    </site>
+  </distributionManagement>
+<!--
+  <repositories>
+    <repository>
+      <id>NexusAmis</id>
+      <name>AMIS centrale repository en proxy</name>
+      <url>http://build.amis.nl:8081/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+ -->  
+</project>
